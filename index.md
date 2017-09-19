@@ -20,20 +20,20 @@
   - A. M. Haberlie and R. M. May, [Implementation and Comparison of Interpolation Techniques for the Meteorological Python (MetPy) Package](https://ams.confex.com/ams/97Annual/webprogram/Paper304950.html)
   - R. M. May, [Python (presentation to Student Conference "Tools of the Trade")](https://ams.confex.com/ams/97Annual/webprogram/Paper317334.html)
 * SciPy 2016
-- [Bootstrapping an Open Source Library: How MetPy Got Up & Running with Lazy Developers](https://www.youtube.com/watch?v=moLKGjbXvgE)
+  - [Bootstrapping an Open Source Library: How MetPy Got Up & Running with Lazy Developers](https://www.youtube.com/watch?v=moLKGjbXvgE)
 * AMS Annual Meeting 2016
   - R. M. May, K. H. Goebbert, and S. C. Arms, [Converting to Python: Roadblocks and Missing Functionality](https://ams.confex.com/ams/96Annual/webprogram/Paper286893.html)
 * AMS Annual Meeting 2015
   - R. M. May and S. C. Arms, [Exploring Client-Server Data Visualization using IPython and WebGL](https://ams.confex.com/ams/95Annual/webprogram/Paper268652.html)
 
 ## Teaching
-* University of Wisconsin Regional Workshop, University of Wisconsin, June 2017
-* University of Oklahoma Regional Python Workshop, University of Oklahoma, April 2017
-* Millersville University Regional Workshop, Millersville University of Pennsylvania, April 2017
-* Interacting with Radar Data in the Cloud, AMS 2017 Annual Meeting, January 2017
-* Unidata Python Workshop, October 2016
+* [University of Wisconsin Regional Workshop](https://unidata.github.io/unidata-python-workshop/events/madison2017.html), University of Wisconsin, June 2017
+* [University of Oklahoma Regional Python Workshop](https://unidata.github.io/unidata-python-workshop/events/oklahoma2017.html), University of Oklahoma, April 2017
+* [Millersville University Regional Workshop](https://unidata.github.io/unidata-python-workshop/events/millersville2017.html), Millersville University of Pennsylvania, April 2017
+* [Interacting with Radar Data in the Cloud](https://annual.ametsoc.org/2017/index.cfm/programs/short-courses-and-workshops/interacting-with-radar-data-in-the-cloud1/), AMS 2017 Annual Meeting, January 2017
+* [Unidata Python Workshop](https://unidata.github.io/unidata-python-workshop/events/fall2016.html), October 2016
 * Software Carpentry, Texas Tech University, August 2016
-* Unidata Python Workshop, University of Wisconsin/SSEC, June 2016
+* [Unidata Python Workshop](https://unidata.github.io/unidata-python-workshop/events/madison2016.html), University of Wisconsin/SSEC, June 2016
 * MetPy and Siphon, Software Engineering Assembly Conference, April 2016
 * THREDDS Training Workshop, July 2015
 * Python with Unidata Technologies, July 2015
