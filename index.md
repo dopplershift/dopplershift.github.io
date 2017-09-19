@@ -1,11 +1,12 @@
 # Ryan May's CV
+
 ## Employment
 * Software Engineer, Unidata/University Corporation for Atmospheric Research, 2014-Current
 * Software Engineer, Enterprise Electronics Corporation, 2009-2013
 * Graduate Research Assistant, University of Oklahoma School of Meteorology, 2003-2010
 
 ## Open Source Work
-* Maintainer for @Unidata/MetPy, @Unidata/siphon
+* Maintainer for [MetPy](https://github.com/Unidata/MetPy) and [siphon](https://github.com/Unidata/siphon)
 * Committer for @matplotlib
 * Contributed to numpy, scipy, cartopy, pint
 
@@ -34,7 +35,7 @@
   * [Interacting with Radar Data in the Cloud](https://annual.ametsoc.org/2017/index.cfm/programs/short-courses-and-workshops/interacting-with-radar-data-in-the-cloud1/), AMS 2017 Annual Meeting, January 2017
 * 2016
   * [Unidata Python Workshop](https://unidata.github.io/unidata-python-workshop/events/fall2016.html), October 2016
-  * Software Carpentry, Texas Tech University, August 2016
+  * [Software Carpentry](https://jdcorless.github.io/2016-08-26-TTU/), Texas Tech University, August 2016
   * [Unidata Python Workshop](https://unidata.github.io/unidata-python-workshop/events/madison2016.html), University of Wisconsin/SSEC, June 2016
   * MetPy and Siphon, Software Engineering Assembly Conference, April 2016
 * 2015
