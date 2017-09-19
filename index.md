@@ -10,6 +10,10 @@
 * Committer for @matplotlib
 * Contributed to numpy, scipy, cartopy, pint
 
+## Peer-Reviewed Publications
+* R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
+* Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc. [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1), in press.
+
 ## Presentations
 * SciPy 2017
   - R. M. May and J. R. Leeman, [MetPy’s Choice of Unit Support: A Descent into Madness](https://www.youtube.com/watch?v=qCo9bkT9sow&t=1s)
@@ -55,6 +59,9 @@
 * 2010
   * [Matplotlib: Beyond the Basics](https://conference.scipy.org/scipy2010/tutorials.html#matplotlib), SciPy 2010, June 2010
 
+## Grants
+* [NSF-1740315](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1740315), SI2-SSE: MetPy - A Python GEMPAK Replacement for Meteorological Data Analysis, Principal Investigator, September 2017-August 2020.
+* [NSF-1740633](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1740633), Collaborative Proposal: EarthCube Integration: Pangeo: An Open Source Big Data Climate Science Platform, Co-Principal Investigator, September 2017-August 2020.
 
 ## Interests
 My background and degrees are in meteorology, with a focus on weather radar
