@@ -29,6 +29,8 @@
   - S. C. Arms and R. M. May, [Siphon: Extracting Data from THREDDS Data Servers in Multiple Ways using Python](https://ams.confex.com/ams/96Annual/webprogram/Paper283678.html)
 * AMS Annual Meeting 2015
   - R. M. May and S. C. Arms, [Exploring Client-Server Data Visualization using IPython and WebGL](https://ams.confex.com/ams/95Annual/webprogram/Paper268652.html)
+* AMS Annual Meting 2011
+  - R. M. May, [Porting radar simulation software to Python: a case study in the benefits of Python](https://ams.confex.com/ams/91Annual/webprogram/Paper185405.html)
 
 ## Teaching
 * 2017
@@ -48,6 +50,10 @@
 * 2014
   * THREDDS Training Workshop, October 2014
   * Python with Unidata Technologies, October 2014
+* 2012
+  * [Advanced Matplotlib Tutorial](https://github.com/dopplershift/Python-Tutorials), SciPy 2012, July 2012
+* 2010
+  * [Matplotlib: Beyond the Basics](https://conference.scipy.org/scipy2010/tutorials.html#matplotlib), SciPy 2010, June 2010
 
 
 ## Interests
