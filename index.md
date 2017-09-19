@@ -14,7 +14,7 @@
 * Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc. [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1), in press.
 * R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
 
-## Presentations
+## Conference Presentations
 * SciPy 2017
   - R. M. May and J. R. Leeman, [MetPy’s Choice of Unit Support: A Descent into Madness](https://www.youtube.com/watch?v=qCo9bkT9sow&t=1s)
 * AMS Annual Meeting 2017
