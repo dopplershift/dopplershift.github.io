@@ -11,8 +11,8 @@
 * Contributed to numpy, scipy, cartopy, pint
 
 ## Peer-Reviewed Publications
-* R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
 * Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc. [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1), in press.
+* R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
 
 ## Presentations
 * SciPy 2017
