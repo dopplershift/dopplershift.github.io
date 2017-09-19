@@ -23,7 +23,10 @@
 * SciPy 2016
   - [Bootstrapping an Open Source Library: How MetPy Got Up & Running with Lazy Developers](https://www.youtube.com/watch?v=moLKGjbXvgE)
 * AMS Annual Meeting 2016
+  - R. M. May and S. C. Arms, [MetPy: An Open-Source Toolkit for Meteorology](https://ams.confex.com/ams/96Annual/webprogram/Paper286983.html)
   - R. M. May, K. H. Goebbert, and S. C. Arms, [Converting to Python: Roadblocks and Missing Functionality](https://ams.confex.com/ams/96Annual/webprogram/Paper286893.html)
+  - J. Caron, S. C. Arms, E. R. Davis, D. Heimbigner, R. M. May, and C. Ward-Garrison, [THREDDS 5.0: The Good, The Bad, and The Awesome](https://ams.confex.com/ams/96Annual/webprogram/Paper283697.html)
+  - S. C. Arms and R. M. May, [Siphon: Extracting Data from THREDDS Data Servers in Multiple Ways using Python](https://ams.confex.com/ams/96Annual/webprogram/Paper283678.html)
 * AMS Annual Meeting 2015
   - R. M. May and S. C. Arms, [Exploring Client-Server Data Visualization using IPython and WebGL](https://ams.confex.com/ams/95Annual/webprogram/Paper268652.html)
 
