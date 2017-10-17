@@ -1,4 +1,5 @@
-# Ryan May's CV
+# Ryan May
+UCAR/Unidata
 
 ## Employment
 * Software Engineer, Unidata/University Corporation for Atmospheric Research, 2014-Current
@@ -9,6 +10,14 @@
 * Maintainer for [MetPy](https://github.com/Unidata/MetPy) and [siphon](https://github.com/Unidata/siphon)
 * Committer for @matplotlib
 * Contributed to numpy, scipy, cartopy, pint
+
+## Education
+* School of Meteorology, University of Oklahoma, Norman, OK
+  - Ph.D., Meteorology, 2014
+    - Advisor: Dr. Michael Biggerstaff
+  -  M.S., Meteorology, 2005
+    - Advisor: Dr. Michael Biggerstaff
+  - B.S., Meteorology, 2003
 
 ## Peer-Reviewed Publications
 * Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc. [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1), in press.
@@ -33,7 +42,7 @@
   - S. C. Arms and R. M. May, [Siphon: Extracting Data from THREDDS Data Servers in Multiple Ways using Python](https://ams.confex.com/ams/96Annual/webprogram/Paper283678.html)
 * AMS Annual Meeting 2015
   - R. M. May and S. C. Arms, [Exploring Client-Server Data Visualization using IPython and WebGL](https://ams.confex.com/ams/95Annual/webprogram/Paper268652.html)
-* AMS Annual Meting 2011
+* AMS Annual Meeting 2011
   - R. M. May, [Porting radar simulation software to Python: a case study in the benefits of Python](https://ams.confex.com/ams/91Annual/webprogram/Paper185405.html)
 
 ## Teaching
