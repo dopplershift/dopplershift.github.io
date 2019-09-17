@@ -66,6 +66,7 @@ UCAR/Unidata
 * 2019
   * [Regional Python Workshop at Valparaiso University](https://unidata.github.io/python-workshop/events/valpo2019.html), Valparaiso University, August 2019
   * [NetCDF and CF: The Basics](https://2019esipsummermeeting.sched.com/event/PtOv/netcdf-and-cf-the-basics), 2019 Earth Science Information Partners Summer Meeting Tacoma WA, July 2019
+  * [Testing Your Python Code with PyTest](https://www.youtube.com/watch?v=LX2ksGYXJ80), 2019 SciPy Tutorial Austin TX, July 2019
   * [Regional Python Workshop at the University at Albany](https://unidata.github.io/python-workshop/events/albany2019.html), SUNY Albany, May 2019
   * [Python Workshop at Metropolitan State University](https://unidata.github.io/python-workshop/events/metro2019.html), Metropolitan State University, March 2019
   * [AMS Short Course: Python for Synoptic Meteorology Using Metpy](https://unidata.github.io/python-workshop/events/ams2019.html), 2019 AMS Annual Meeting Phoenix AZ, January 2019
@@ -73,6 +74,7 @@ UCAR/Unidata
   * [Unidata Python Training Workshop](https://unidata.github.io/python-workshop/events/unidata2018.html), Boulder CO, October 2018
   * [Unidata Python Regional Workshop](https://unidata.github.io/python-workshop/events/sjsu2018.html), San Jose State University, October 2018
   * [Unidata Python Regional Workshop](https://unidata.github.io/python-workshop/events/jackson2018.html), Jackson State University, August 2018
+  * [Setting Up Your Own Open Source Project](https://www.youtube.com/watch?v=hQq2Ayqb5d8), 2019 SciPy Tutorial Austin TX, July 2018
   * [CSU Python Workshop](https://unidata.github.io/python-workshop/events/csu2018.html), Colorado State University, May 2018
   * [Meteorological Data Analysis and Visualization with MetPy](https://unidata.github.io/python-workshop/events/sea2018.html), 2019 Software Engineering Assmembly Conference Boulder CO, April 2018
   * [AMS Short Course: Python for Dynamical Meteorology Using MetPy](https://unidata.github.io/python-workshop/events/ams2018.html), 2018 AMS Annual Meeting Austin TX, January 2018
