@@ -65,6 +65,7 @@ UCAR/Unidata
 ## Teaching
 * 2019
   * [Regional Python Workshop at Valparaiso University](https://unidata.github.io/python-workshop/events/valpo2019.html), Valparaiso University, August 2019
+  * [NetCDF and CF: The Basics](https://2019esipsummermeeting.sched.com/event/PtOv/netcdf-and-cf-the-basics), 2019 Earth Science Information Partners Summer Meeting Tacoma WA, July 2019
   * [Regional Python Workshop at the University at Albany](https://unidata.github.io/python-workshop/events/albany2019.html), SUNY Albany, May 2019
   * [Python Workshop at Metropolitan State University](https://unidata.github.io/python-workshop/events/metro2019.html), Metropolitan State University, March 2019
   * [AMS Short Course: Python for Synoptic Meteorology Using Metpy](https://unidata.github.io/python-workshop/events/ams2019.html), 2019 AMS Annual Meeting Phoenix AZ, January 2019
