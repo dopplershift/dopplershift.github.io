@@ -15,7 +15,7 @@ UCAR/Unidata
 * School of Meteorology, University of Oklahoma, Norman, OK
   - Ph.D., Meteorology, 2014
     - Advisor: Dr. Michael Biggerstaff
-  -  M.S., Meteorology, 2005
+  - M.S., Meteorology, 2005
     - Advisor: Dr. Michael Biggerstaff
   - B.S., Meteorology, 2003
 
