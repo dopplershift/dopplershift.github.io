@@ -21,10 +21,19 @@ UCAR/Unidata
   - B.S., Meteorology, 2003
 
 ## Peer-Reviewed Publications
-* Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc. [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1), in press.
-* R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
+* Ansari, S., S. Del Greco, E. Kearns, O. Brown, S. Wilkins, M. Ramamurthy, J. Weber, R. May, J. Sundwall, J. Layton, A. Gold, A. Pasch, and V. Lakshmanan, 2018: Unlocking the potential of NEXRAD data through NOAA's Big Data Partnership. Bull. Amer. Meteor. Soc., 99, 189-204 [doi:10.1175/BAMS-D-16-0021.1](https://doi.org/10.1175/BAMS-D-16-0021.1).
+* Cao, Q., G. Zhang, R. D. Palmer, M. Knight, R. May, and R. J. Stafford, 2012: Spectrum-Time Estimation and Processing (STEP) for Improving Weather Radar Data Quality. IEEE Trans. Geo. Rem. Sens., 50, 4670-4683.[doi:10.1109/TGRS.2012.2190608](https://doi.org/10.1109/TGRS.2012.2190608)
+* R. M. May, M. I. Biggerstaff, and M. Xue, 2007: A Doppler Radar Emulator with an Application to the Detectability of Tornadic Signatures, J. Atmos. Oceanic Tech., 24, 1973-1996, [doi:10.1175/2007JTECHA882.1](https://doi.org/10.1175/2007JTECHA882.1)
 
 ## Conference Presentations
+* AMS Annual Meeting 2020
+  - R. M. May, Z. S. Bruick, and K. H. Goebbert, [MetPy 1.0: An Upgrade from GEMPAK for Twenty-First Century Atmospheric Science Data Analysis and Visualization](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/369011)
+  - A. Sweeney, S. C. Arms, R. M. May, Z. Bruick, [Remote Access of National Hurricane Center Storm Tracks and Storm Prediction Center Storm Reports with Siphon](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/365231)
+  - K. H. Goebbert, R. M. May, Z. S. Bruick, [An Interactive Demonstration of MetPy's Declarative Language: Moving from GEMPAK to MetPy as the Primary Analysis and Visualization Tool of Atmospheric Scientists](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/368147)
+  - Z. S. Bruick, R. M. May, and K. H. Goebbert, [A One-Stop Shop for Atmospheric Science Python: The Unidata Python Training Site](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/368299)
+  - M. Grover, R. M. May, Z. Bruick, [Declarative Surface Station Plots: The Next Stop on the GEMPAK Replacement Roadmap for MetPy](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/365917)
+  - S. C. Arms, R. M. May, D. Dirks, [The Unidata Summer Internship Program—Seven Years of Providing Students with Software Carpentry Skills](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/369041)
+  - J. E. Thielen and R. M. May, [Bringing WRF into MetPy (and the Rest of the Atmospheric Sciences Python Ecosystem)](https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/369355)
 * AMS Annual Meeting 2019
   - R. M. May, J. R. Leeman, and K. H. Goebbert, [Bringing GEMPAK-like Syntax to Python with MetPy's Declarative Plotting Interface](https://ams.confex.com/ams/2019Annual/meetingapp.cgi/Paper/352384)
   - K. H. Goebbert and R. M. May, [From GEMPAK to MetPy: An Updated tool for Teaching Synoptic Meteorology (and Much More)](https://ams.confex.com/ams/2019Annual/meetingapp.cgi/Paper/349856)
