@@ -8,6 +8,7 @@
     <py-env>
       - matplotlib
       - pandas
+      - ./MetPy-1.3.0.post71+gdbf190497-py3-none-any.whl
     </py-env>
   </head>
   <body>
@@ -17,279 +18,18 @@
 # Copyright (c) 2014,2015,2016,2017,2019 MetPy Developers.
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
-
-from contextlib import ExitStack
-
-from matplotlib.axes import Axes
-import matplotlib.axis as maxis
-from matplotlib.collections import LineCollection
-import matplotlib.colors as mcolors
-from matplotlib.lines import Line2D
-from matplotlib.patches import Circle
-from matplotlib.projections import register_projection
-import matplotlib.spines as mspines
-from matplotlib.ticker import MultipleLocator, NullFormatter, ScalarFormatter
-import matplotlib.transforms as transforms
-import numpy as np
-
-class SkewTTransform(transforms.Affine2D):
-    def __init__(self, bbox, rot):
-        super().__init__()
-        self._bbox = bbox
-        self.set_children(bbox)
-        self.invalidate()
-
-        # We're not trying to support changing the rotation, so go ahead and convert to
-        # the right factor for skewing here and just save that.
-        self._rot_factor = np.tan(np.deg2rad(rot))
-
-    def get_matrix(self):
-        if self._invalid:
-            # The following matrix is equivalent to the following:
-            # x0, y0 = self._bbox.xmin, self._bbox.ymin
-            # self.translate(-x0, -y0).skew_deg(self._rot, 0).translate(x0, y0)
-            # Setting it this way is just more efficient.
-            self._mtx = np.array([[1.0, self._rot_factor, -self._rot_factor * self._bbox.ymin],
-                                  [0.0, 1.0, 0.0],
-                                  [0.0, 0.0, 1.0]])
-
-            # Need to clear both the invalid flag *and* reset the inverse, which is cached
-            # by the parent class.
-            self._invalid = 0
-            self._inverted = None
-        return self._mtx
-
-
-class SkewXTick(maxis.XTick):
-    def draw(self, renderer):
-        with ExitStack() as stack:
-            for artist in [self.gridline, self.tick1line, self.tick2line,
-                            self.label1, self.label2]:
-                stack.callback(artist.set_visible, artist.get_visible())
-
-            self.tick1line.set_visible(self.tick1line.get_visible() and self.lower_in_bounds)
-            self.label1.set_visible(self.label1.get_visible() and self.lower_in_bounds)
-            self.tick2line.set_visible(self.tick2line.get_visible() and self.upper_in_bounds)
-            self.label2.set_visible(self.label2.get_visible() and self.upper_in_bounds)
-            self.gridline.set_visible(self.gridline.get_visible() and self.grid_in_bounds)
-            super().draw(renderer)
-
-    @property
-    def lower_in_bounds(self):
-        return transforms.interval_contains(self.axes.lower_xlim, self.get_loc())
-
-    @property
-    def upper_in_bounds(self):
-        return transforms.interval_contains(self.axes.upper_xlim, self.get_loc())
-
-    @property
-    def grid_in_bounds(self):
-        return transforms.interval_contains(self.axes.xaxis.get_view_interval(),
-                                            self.get_loc())
-
-
-class SkewXAxis(maxis.XAxis):
-    def _get_tick(self, major):
-        return SkewXTick(self.axes, None, major=major)
-
-    # Needed to properly handle tight bbox
-    def _get_tick_bboxes(self, ticks, renderer):
-        return ([tick.label1.get_window_extent(renderer)
-                  for tick in ticks if tick.label1.get_visible() and tick.lower_in_bounds],
-                [tick.label2.get_window_extent(renderer)
-                  for tick in ticks if tick.label2.get_visible() and tick.upper_in_bounds])
-
-    def get_view_interval(self):
-        return self.axes.upper_xlim[0], self.axes.lower_xlim[1]
-
-
-class SkewSpine(mspines.Spine):
-    def _adjust_location(self):
-        pts = self._path.vertices
-        if self.spine_type == 'top':
-            pts[:, 0] = self.axes.upper_xlim
-        else:
-            pts[:, 0] = self.axes.lower_xlim
-
-
-class SkewXAxes(Axes):
-    # The projection must specify a name.  This will be used be the
-    # user to select the projection, i.e. ``subplot(111,
-    # projection='skewx')``.
-    name = 'skewx'
-
-    def __init__(self, *args, **kwargs):
-        r"""Initialize `SkewXAxes`.
-
-        Parameters
-        ----------
-        args : Arbitrary positional arguments
-            Passed to :class:`matplotlib.axes.Axes`
-
-        position: int, optional
-            The rotation of the x-axis against the y-axis, in degrees.
-
-        kwargs : Arbitrary keyword arguments
-            Passed to :class:`matplotlib.axes.Axes`
-
-        """
-        # This needs to be popped and set before moving on
-        self.rot = kwargs.pop('rotation', 30)
-        super().__init__(*args, **kwargs)
-
-    def _init_axis(self):
-        # Taken from Axes and modified to use our modified X-axis
-        self.xaxis = SkewXAxis(self)
-        self.spines['top'].register_axis(self.xaxis)
-        self.spines['bottom'].register_axis(self.xaxis)
-        self.yaxis = maxis.YAxis(self)
-        self.spines['left'].register_axis(self.yaxis)
-        self.spines['right'].register_axis(self.yaxis)
-
-    def _gen_axes_spines(self, locations=None, offset=0.0, units='inches'):
-        return {'top': SkewSpine.linear_spine(self, 'top'),
-                'bottom': mspines.Spine.linear_spine(self, 'bottom'),
-                'left': mspines.Spine.linear_spine(self, 'left'),
-                'right': mspines.Spine.linear_spine(self, 'right')}
-
-    def _set_lim_and_transforms(self):
-        # Get the standard transform setup from the Axes base class
-        super()._set_lim_and_transforms()
-
-        # This transformation handles the skewing
-        skew_trans = SkewTTransform(self.bbox, self.rot)
-
-        # Create the full transform from Data to Pixels
-        self.transData += skew_trans
-
-        # Blended transforms like this need to have the skewing applied using
-        # both axes, in axes coords like before.
-        self._xaxis_transform += skew_trans
-
-    @property
-    def lower_xlim(self):
-        return self.axes.viewLim.intervalx
-
-    @property
-    def upper_xlim(self):
-        return self.transData.inverted().transform([[self.bbox.xmin, self.bbox.ymax],
-                                                    self.bbox.max])[:, 0]
-
-
-# Now register the projection with matplotlib so the user can select it.
-register_projection(SkewXAxes)
-
-
-class SkewT:
-    r"""Make Skew-T log-P plots of data.
-
-    This class simplifies the process of creating Skew-T log-P plots in
-    using matplotlib. It handles requesting the appropriate skewed projection,
-    and provides simplified wrappers to make it easy to plot data, add wind
-    barbs, and add other lines to the plots (e.g. dry adiabats)
-
-    Attributes
-    ----------
-    ax : `matplotlib.axes.Axes`
-        The underlying Axes instance, which can be used for calling additional
-        plot functions (e.g. `axvline`)
-
-    """
-
-    def __init__(self, fig=None, rotation=30, subplot=None, rect=None, aspect=80.5):
-        if fig is None:
-            import matplotlib.pyplot as plt
-            figsize = plt.rcParams.get('figure.figsize', (7, 7))
-            fig = plt.figure(figsize=figsize)
-        self._fig = fig
-
-        if rect and subplot:
-            raise ValueError("Specify only one of `rect' and `subplot', but not both")
-
-        elif rect:
-            self.ax = fig.add_axes(rect, projection='skewx', rotation=rotation)
-
-        else:
-            if subplot is not None:
-                # Handle being passed a tuple for the subplot, or a GridSpec instance
-                try:
-                    len(subplot)
-                except TypeError:
-                    subplot = (subplot,)
-            else:
-                subplot = (1, 1, 1)
-
-            self.ax = fig.add_subplot(*subplot, projection='skewx', rotation=rotation)
-
-        # Set the yaxis as inverted with log scaling
-        self.ax.set_yscale('log')
-
-        # Override default ticking for log scaling
-        self.ax.yaxis.set_major_formatter(ScalarFormatter())
-        self.ax.yaxis.set_major_locator(MultipleLocator(100))
-        self.ax.yaxis.set_minor_formatter(NullFormatter())
-
-        # Needed to make sure matplotlib doesn't freak out and create a bunch of ticks
-        # Also takes care of inverting the y-axis
-        self.ax.set_ylim(1050, 100)
-
-        # Try to make sane default temperature plotting ticks
-        self.ax.xaxis.set_major_locator(MultipleLocator(10))
-        self.ax.set_xlim(-40, 50)
-        self.ax.grid(True)
-
-        self.mixing_lines = None
-        self.dry_adiabats = None
-        self.moist_adiabats = None
-
-        # Maintain a reasonable ratio of data limits.
-        self.ax.set_aspect(aspect, adjustable='box')
-
-    def plot(self, pressure, t, *args, **kwargs):
-        return self.ax.plot(t, pressure, *args, **kwargs)
-
-    def plot_barbs(self, pressure, u, v, c=None, xloc=1.0, x_clip_radius=0.1,
-                    y_clip_radius=0.08, **kwargs):
-        # If plot_units specified, convert the data to those units
-        plotting_units = kwargs.pop('plot_units', None)
-        if plotting_units:
-            if hasattr(u, 'units') and hasattr(v, 'units'):
-                u = u.to(plotting_units)
-                v = v.to(plotting_units)
-            else:
-                raise ValueError('To convert to plotting units, units must be attached to '
-                                  'u and v wind components.')
-
-        # Assemble array of x-locations in axes space
-        x = np.empty_like(pressure)
-        x.fill(xloc)
-
-        # Do barbs plot at this location
-        if c is not None:
-            b = self.ax.barbs(x, pressure, u, v, c,
-                              transform=self.ax.get_yaxis_transform(which='tick2'),
-                              clip_on=True, zorder=2, **kwargs)
-        else:
-            b = self.ax.barbs(x, pressure, u, v,
-                              transform=self.ax.get_yaxis_transform(which='tick2'),
-                              clip_on=True, zorder=2, **kwargs)
-
-        # Override the default clip box, which is the axes rectangle, so we can have
-        # barbs that extend outside.
-        ax_bbox = transforms.Bbox([[xloc - x_clip_radius, -y_clip_radius],
-                                    [xloc + x_clip_radius, 1.0 + y_clip_radius]])
-        b.set_clip_box(transforms.TransformedBbox(ax_bbox, self.ax.transAxes))
-        return b
-
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from pyodide.http import open_url
 
-fig = plt.figure(figsize=(8, 8))
-skew = SkewT(fig)
+import metpy.calc as mpcalc
+from metpy.cbook import get_test_data
+from metpy.plots import add_metpy_logo, SkewT
+from metpy.units import units
 
-# Upper air data can be obtained using the siphon package, but for this example we will use
-# some of MetPy's sample data.
+# Change default to be better for skew-T
+fig = plt.figure(figsize=(9, 9))
 
 col_names = ['pressure', 'height', 'temperature', 'dewpoint', 'direction', 'speed']
 
@@ -300,15 +40,38 @@ df = pd.read_fwf(open_url('https://raw.githubusercontent.com/Unidata/MetPy/main/
 df = df.dropna(subset=('temperature', 'dewpoint', 'direction', 'speed'
                        ), how='all').reset_index(drop=True)
 
-p = df['pressure'].values
-T = df['temperature'].values
-Td = df['dewpoint'].values
+p = df['pressure'].values * units.hPa
+T = df['temperature'].values * units.degC
+Td = df['dewpoint'].values * units.degC
+wind_speed = df['speed'].values * units.knots
+wind_dir = df['direction'].values * units.degrees
+u, v = mpcalc.wind_components(wind_speed, wind_dir)
 
+skew = SkewT(fig)
+
+# Plot the data using normal plotting functions, in this case using
+# log scaling in Y, as dictated by the typical meteorological plot
 skew.plot(p, T, 'r')
 skew.plot(p, Td, 'g')
 
+# Set spacing interval--Every 50 mb from 1000 to 100 mb
+my_interval = np.arange(100, 1000, 50) * units('mbar')
+
+# Get indexes of values closest to defined interval
+ix = mpcalc.resample_nn_1d(p, my_interval)
+
+# Plot only values nearest to defined interval values
+skew.plot_barbs(p[ix], u[ix], v[ix])
+
+# Add the relevant special lines
+skew.plot_dry_adiabats()
+skew.plot_moist_adiabats()
+skew.plot_mixing_lines()
 skew.ax.set_ylim(1000, 100)
-skew.ax.set_xlim(-50, 30)
+skew.ax.set_xlim(-50, 40)
+
+# Add the MetPy logo!
+add_metpy_logo(fig, 115, 150)
 
 fig
     </py-script>
