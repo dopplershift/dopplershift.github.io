@@ -38,7 +38,7 @@ class Plotter:
         self._init_plot()
 
     def _init_plot(self):
-        self._fig = plt.Figure(figsize=(7.5, 7), dpi=200)
+        self._fig = plt.Figure(figsize=(5.5, 5.5), dpi=200)
         self.skew = SkewT(self._fig, rect=(0.09, 0.04, 0.88, 0.94))
         self.skew.ax.set_ylim(1050, 100)
         self.skew.ax.set_xlim(-50, 40)
@@ -58,8 +58,8 @@ class Plotter:
         self._barbs.set_clip_on(False)
 
         # Add the MetPy logo!
-        add_metpy_logo(self._fig, 150, 125, size='large')
-        add_unidata_logo(self._fig, 300, 125, size='large')
+        add_metpy_logo(self._fig, 110, 125, size='large')
+        add_unidata_logo(self._fig, 260, 125, size='large')
 
         self.draw()
 
