@@ -16,7 +16,7 @@ from metpy.plots import add_metpy_logo, add_unidata_logo, SkewT
 from metpy.units import units, pandas_dataframe_to_unit_arrays
 
 
-def get_data_clicked(*args, **kwargs):
+def get_data_clicked():
     station = Element('station_id').value
     dt = datetime.fromisoformat(Element('datetime').value)
     console.log(f'Data for {station} at {dt} requested')
@@ -26,7 +26,7 @@ def get_data_clicked(*args, **kwargs):
         console.log(f'Error fetching data: {str(e)}')
 
 
-def show_profile_clicked(*args, **kwargs):
+def show_profile_clicked():
     is_checked = document.querySelector("#showprofile").checked
     plotter.enable_profile(is_checked)
 

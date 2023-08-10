@@ -3,14 +3,14 @@
     <title>MetPy Skew-T in PyScript</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <py-env>
-      - matplotlib
-      - numpy
-      - pandas
-      - ./MetPy-1.3.0.post71+gdbf190497-py3-none-any.whl
-    </py-env>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <py-config>
+      packages = ["lzma", "metpy"]
+    </py-config>
+    <py-script src="plot.py"></py-script>
     <style>
         #skewt img {
             display: inline-block;
@@ -18,21 +18,24 @@
     </style>
   </head>
   <body>
-    <div class="container text-center">
-      <py-script src="plot.py"></py-script>
-      <h1 class="text-3xl font-bold uppercase text-gray-800">MetPy SkewT PyScript Demo</h1>
+    <div class="grid">
+    <h1 class="text-3xl font-bold uppercase text-gray-800">MetPy SkewT PyScript Demo</h1>
       <div>
-        <input id="station_id" class="border rounded flex-1 mr-3 p-2" type="text" value="KOUN">
-        <input id="datetime" class="border rounded flex-1 mr-3 p-2" type="datetime-local" value="1999-05-03T12:00">
-        <button id="update" class="border rounded p-2 text-white bg-blue-600 border-blue" type="submit" pys-onClick="get_data_clicked">
-          Get Data
-        </button>
+        <label class="form-label" for="station_id">Station:</label>
+        <input id="station_id" class="border rounded" type="text" value="KOUN">
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="showprofile" name="showprofile" pys-onClick="show_profile_clicked">
+      <div>
+        <label class="form-label" for="datetime">Date:</label>
+        <input id="datetime" class="border rounded" type="datetime-local" value="1999-05-03T12:00">
+      </div>
+      <div>
+        <button id="update" class="btn btn-primary" type="submit" py-click="get_data_clicked()">Get Data</button>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="showprofile" py-click="show_profile_clicked()">
         <label class="form-check-label" for="showprofile">Show Profile</label>
       </div>
-      <div id="skewt"></div>
+    <div id="skewt"></div>
     </div>
   </body>
 </html>
